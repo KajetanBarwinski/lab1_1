@@ -3,25 +3,29 @@ package pl.com.bottega.ecommerce.sales.domain.offer;
 import java.math.BigDecimal;
 
 public class Discount {// discount
-    String discountCause;
-    BigDecimal discount;
+    private String discountCause;
+    private Money value = new Money();
 
     public Discount() {
     }
 
-    public BigDecimal getDiscount() {
-        return discount;
+    public BigDecimal getValue() {
+        return value.getAmount();
     }
 
     public String getDiscountCause() {
         return discountCause;
     }
 
-    public void setDiscount(BigDecimal discount) {
-        this.discount=discount;
+    public void setValue(BigDecimal value) {
+        this.value.setAmount(value);
     }
 
     public void setDiscountCause(String discountCause) {
-        this.discountCause=discountCause;
+        this.discountCause = discountCause;
+    }
+
+    public BigDecimal getAmount() {
+        return value.getAmount();
     }
 }
